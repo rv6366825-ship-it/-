@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформление заказа — ФОТОLAB</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="page-wrapper">
+
+    <header class="header">
+        <div class="container header__inner">
+            <a href="index.html" class="logo">
+                <img src="img/logo.svg" alt="ФОТОLAB" class="logo__img">
+                ФОТОLAB
+            </a>
+            <nav class="nav">
+                <a href="catalog.html" class="nav__link">Услуги</a>
+                <a href="gallery.html" class="nav__link">Галерея</a>
+                <a href="contacts.html" class="nav__link">Контакты</a>
+                <a href="index.html#reviews" class="nav__link">Отзывы</a>
+            </nav>
+            <div class="header__actions">
+                <span class="user-greeting" id="userGreeting"></span>
+                <button class="btn btn--outline" id="loginBtn">Войти</button>
+                <a href="cart.html" class="cart-icon">🛒<span class="cart-count" id="cartCount">0</span></a>
+                <button class="burger" id="burgerBtn">
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="catalog.html" class="mobile-nav__link">Услуги</a>
+        <a href="gallery.html" class="mobile-nav__link">Галерея</a>
+        <a href="contacts.html" class="mobile-nav__link">Контакты</a>
+        <a href="#" class="mobile-nav__link" id="mobileLoginBtn">Войти</a>
+    </nav>
+
+    <main class="container" style="margin-top: 40px; padding-bottom: 60px;">
+        <h1 class="section-title">Оформление заказа</h1>
+
+        <div class="checkout-wrap">
+
+            <div class="checkout-form-card">
+                <form id="checkoutForm">
+                    <div class="form-group">
+                        <label for="shootType">Тип съемки</label>
+                        <select id="shootType">
+                            <option>Семейная</option>
+                            <option>Портретная</option>
+                            <option>Предметная</option>
+                            <option>Свадебная</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Желаемая дата</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Ваше имя</label>
+                        <input type="text" id="name" placeholder="Имя Фамилия" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" placeholder="+7 (___) ___-__-__" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="example@mail.ru" required>
+                    </div>
+                    <button type="submit" class="btn btn--accent" style="width: 100%; font-size: 18px; padding: 16px;">
+                        Оформить заявку
+                    </button>
+                </form>
+                <div class="checkout-success" id="orderSuccess">
+                    Заявка принята! Мы свяжемся с вами в ближайшее время.
+                </div>
+            </div>
+
+            <div class="order-summary">
+                <h3>Ваши услуги</h3>
+                <div id="summaryItems"><p style="color: #888;">Корзина пуста</p></div>
+                <div class="order-summary__total" id="summaryTotal" style="display: none;">
+                    <span>Итого:</span>
+                    <span id="summaryTotalValue"></span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__contacts">
+                    <h3>Контакты</h3>
+                    <p>Краснодар, ул. Колхозная 5/1</p>
+                    <p>+7 (918) 365-93-77</p>
+                    <p>hello@fotolab.ru</p>
+                </div>
+                <div class="footer__nav">
+                    <h3>Навигация</h3>
+                    <a href="catalog.html">Услуги</a>
+                    <a href="gallery.html">Галерея</a>
+                    <a href="contacts.html">Контакты</a>
+                </div>
+                <div class="footer__social">
+                    <h3>Мы в соцсетях</h3>
+                    <div class="footer__social-links">
+                        <a href="https://vk.com/fotolab" class="footer__social-link" target="_blank">
+                            <img src="img/vk.svg" alt="VK"> VK
+                        </a>
+                        <a href="https://t.me/fotolab" class="footer__social-link" target="_blank">
+                            <img src="img/telegram.svg" alt="Telegram"> Telegram
+                        </a>
+                        <a href="https://max.ru/fotolab" class="footer__social-link" target="_blank">
+                            <img src="img/max.svg" alt="Max"> Max
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </footer>
+
+</div>
+
+<div class="modal" id="authModal">
+    <div class="modal__content">
+        <span class="modal__close" id="closeModal">&times;</span>
+        <h3 class="modal__title" id="modalTitle">Вход</h3>
+        <form id="authForm">
+            <div class="form-group" id="nameGroup" style="display: none;">
+                <input type="text" id="regName" placeholder="Имя">
+            </div>
+            <div class="form-group">
+                <input type="email" id="authEmail" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="authPassword" placeholder="Пароль" required>
+            </div>
+            <div id="authError" class="error-msg"></div>
+            <button type="submit" class="btn" style="width: 100%">Войти</button>
+            <p style="margin-top: 16px; text-align: center;">
+                <a href="#" id="toggleAuth">Нет аккаунта? Зарегистрироваться</a>
+            </p>
+        </form>
+    </div>
+</div>
+
+<div class="toast" id="toast">
+    <span class="toast__icon">✅</span>
+    <span id="toastMsg"></span>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>

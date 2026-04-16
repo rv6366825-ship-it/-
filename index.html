@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ФОТОLAB — студия фотографии</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="page-wrapper">
+
+    <header class="header">
+        <div class="container header__inner">
+            <a href="index.html" class="logo">
+                <img src="img/logo.svg" alt="ФОТОLAB" class="logo__img">
+                ФОТОLAB
+            </a>
+            <nav class="nav">
+                <a href="catalog.html" class="nav__link">Услуги</a>
+                <a href="gallery.html" class="nav__link">Галерея</a>
+                <a href="contacts.html" class="nav__link">Контакты</a>
+                <a href="#reviews" class="nav__link">Отзывы</a>
+            </nav>
+            <div class="header__actions">
+                <span class="user-greeting" id="userGreeting"></span>
+                <button class="btn btn--outline" id="loginBtn">Войти</button>
+                <a href="cart.html" class="cart-icon">🛒<span class="cart-count" id="cartCount">0</span></a>
+                <button class="burger" id="burgerBtn">
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="catalog.html" class="mobile-nav__link">Услуги</a>
+        <a href="gallery.html" class="mobile-nav__link">Галерея</a>
+        <a href="contacts.html" class="mobile-nav__link">Контакты</a>
+        <a href="#reviews" class="mobile-nav__link">Отзывы</a>
+        <a href="#" class="mobile-nav__link" id="mobileLoginBtn">Войти</a>
+    </nav>
+
+    <main>
+
+        <!-- слайдер — вне .container, чтобы не уезжал -->
+        <section class="hero">
+            <div class="slider" id="mainSlider">
+                <div class="slider__slides">
+
+                    <div class="slider__slide active"
+                         style="background-image: url('https://images.pexels.com/photos/1648377/pexels-photo-1648377.jpeg?auto=compress&cs=tinysrgb&w=1920');">
+                        <div class="slide-content">
+                            <h2>Семейная фотосессия</h2>
+                            <p>Теплые кадры для вашей семьи</p>
+                        </div>
+                    </div>
+
+                    <div class="slider__slide"
+                         style="background-image: url('https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&w=1920');">
+                        <div class="slide-content">
+                            <h2>Портретная съемка</h2>
+                            <p>Раскройте свою индивидуальность</p>
+                        </div>
+                    </div>
+
+                    <div class="slider__slide"
+                         style="background-image: url('https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=1920');">
+                        <div class="slide-content">
+                            <h2>Свадебная история</h2>
+                            <p>Сохраним эмоции важного дня</p>
+                        </div>
+                    </div>
+
+                    <div class="slider__slide"
+                         style="background-image: url('https://images.pexels.com/photos/842876/pexels-photo-842876.jpeg?auto=compress&cs=tinysrgb&w=1920');">
+                        <div class="slide-content">
+                            <h2>Предметная съемка</h2>
+                            <p>Профессионально для вашего бизнеса</p>
+                        </div>
+                    </div>
+
+                </div>
+                <button class="slider__arrow slider__arrow--prev">&#8592;</button>
+                <button class="slider__arrow slider__arrow--next">&#8594;</button>
+                <div class="slider__dots"></div>
+            </div>
+        </section>
+
+        <!-- услуги -->
+        <section class="section"><div class="container">
+            <h2 class="section-title">Наши услуги</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-card__icon">📸</div>
+                    <h3 class="service-card__title">Фотосессия</h3>
+                    <p>Индивидуальная, семейная, love story</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon">✨</div>
+                    <h3 class="service-card__title">Ретушь</h3>
+                    <p>Профессиональная обработка снимков</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon">🖨️</div>
+                    <h3 class="service-card__title">Печать</h3>
+                    <p>Фотокниги, холсты, формат А4–А2</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon">🎥</div>
+                    <h3 class="service-card__title">Видеосъемка</h3>
+                    <p>Клипы, репортажи, свадебное видео</p>
+                </div>
+            </div>
+        </div></section>
+
+        <!-- калькулятор -->
+        <section class="section"><div class="container">
+            <div class="calculator">
+                <h2 class="section-title" style="text-align: left; margin-bottom: 30px;">Рассчитать стоимость</h2>
+                <div class="calc-form">
+                    <div class="calc-group">
+                        <label for="calcType">Тип съемки</label>
+                        <select id="calcType" class="calc-select">
+                            <option value="2500">Семейная (2500 ₽/час)</option>
+                            <option value="2000">Портретная (2000 ₽/час)</option>
+                            <option value="1500">Предметная (1500 ₽/час)</option>
+                            <option value="4500">Свадебная (4500 ₽/час)</option>
+                        </select>
+                    </div>
+                    <div class="calc-group">
+                        <label for="calcHours">Длительность (часов)</label>
+                        <input type="number" id="calcHours" class="calc-input" min="1" max="8" value="1">
+                    </div>
+                    <div class="calc-group">
+                        <button class="btn btn--accent" id="calcBtn">Рассчитать</button>
+                    </div>
+                </div>
+                <div class="calc-result" id="calcResult">Примерная стоимость: 2500 ₽</div>
+            </div>
+        </div></section>
+
+        <!-- портфолио -->
+        <section class="section"><div class="container">
+            <h2 class="section-title">Портфолио</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.pexels.com/photos/1648377/pexels-photo-1648377.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Семейная" loading="lazy">
+                    <div class="portfolio-item__overlay"><span class="portfolio-item__label">Семейная съёмка</span></div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Портретная" loading="lazy">
+                    <div class="portfolio-item__overlay"><span class="portfolio-item__label">Портретная съёмка</span></div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.pexels.com/photos/842876/pexels-photo-842876.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Предметная" loading="lazy">
+                    <div class="portfolio-item__overlay"><span class="portfolio-item__label">Предметная съёмка</span></div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Свадебная" loading="lazy">
+                    <div class="portfolio-item__overlay"><span class="portfolio-item__label">Свадебная история</span></div>
+                </div>
+            </div>
+        </div></section>
+
+        <!-- отзывы -->
+        <section class="section" id="reviews"><div class="container">
+            <h2 class="section-title">Отзывы клиентов</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-card__stars">★★★★★</div>
+                    <p class="review-card__text">Очень довольны семейной фотосессией! Фотограф нашёл подход к детям. Фото получились живыми и тёплыми.</p>
+                    <div class="review-card__author">Анна К.</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-card__stars">★★★★★</div>
+                    <p class="review-card__text">Делали свадебную съёмку — результат превзошёл ожидания. Каждый кадр — это история. Спасибо команде!</p>
+                    <div class="review-card__author">Дмитрий и Екатерина</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-card__stars">★★★★☆</div>
+                    <p class="review-card__text">Заказывала бизнес-портрет для LinkedIn. Быстро, качественно, ретушь аккуратная. Рекомендую!</p>
+                    <div class="review-card__author">Марина В.</div>
+                </div>
+            </div>
+        </div></section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__contacts">
+                    <h3>Контакты</h3>
+                    <p>Краснодар, ул. Колхозная 5/1</p>
+                    <p>+7 (918) 365-93-77</p>
+                    <p>hello@fotolab.ru</p>
+                </div>
+                <div class="footer__nav">
+                    <h3>Навигация</h3>
+                    <a href="catalog.html">Услуги</a>
+                    <a href="gallery.html">Галерея</a>
+                    <a href="contacts.html">Контакты</a>
+                </div>
+                <div class="footer__social">
+                    <h3>Мы в соцсетях</h3>
+                    <div class="footer__social-links">
+                        <a href="https://vk.com/fotolab" class="footer__social-link" target="_blank">
+                            <img src="img/vk.svg" alt="VK"> VK
+                        </a>
+                        <a href="https://t.me/fotolab" class="footer__social-link" target="_blank">
+                            <img src="img/telegram.svg" alt="Telegram"> Telegram
+                        </a>
+                        <a href="https://max.ru/fotolab" class="footer__social-link" target="_blank">
+                            <img src="img/max.svg" alt="Max"> Max
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </footer>
+
+</div>
+
+<div class="modal" id="authModal">
+    <div class="modal__content">
+        <span class="modal__close" id="closeModal">&times;</span>
+        <h3 class="modal__title" id="modalTitle">Вход</h3>
+        <form id="authForm">
+            <div class="form-group" id="nameGroup" style="display: none;">
+                <input type="text" id="regName" placeholder="Имя">
+            </div>
+            <div class="form-group">
+                <input type="email" id="authEmail" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="authPassword" placeholder="Пароль" required>
+            </div>
+            <div id="authError" class="error-msg"></div>
+            <button type="submit" class="btn" style="width: 100%">Войти</button>
+            <p style="margin-top: 16px; text-align: center;">
+                <a href="#" id="toggleAuth">Нет аккаунта? Зарегистрироваться</a>
+            </p>
+        </form>
+    </div>
+</div>
+
+<div class="toast" id="toast">
+    <span class="toast__icon">✅</span>
+    <span id="toastMsg"></span>
+</div>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
