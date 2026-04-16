@@ -1,32 +1,30 @@
-/* сброс — убираем отступы и задаём box-sizing у всех элементов */
+/* сброс */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* переменные — все цвета и тени меняй только здесь */
+/* цвета — меняй только здесь */
 :root {
-    --primary:  #2B2B2B;   /* основной тёмный */
-    --accent:   #D9A13B;   /* золотой акцент */
-    --bg:       #FAF9F8;   /* фон страницы */
-    --text:     #1F1F1F;   /* цвет текста */
+    --primary:  #2B2B2B;
+    --accent:   #D9A13B;
+    --bg:       #FAF9F8;
+    --text:     #1F1F1F;
     --white:    #FFFFFF;
-    --border:   #E0E0E0;   /* цвет рамок */
-    --success:  #2A5C4A;   /* зелёный для сообщений об успехе */
-    --error:    #C0392B;   /* красный для ошибок */
-    --shadow:   0 8px 24px rgba(0, 0, 0, 0.08);  /* тень карточек */
-    --tr:       all 0.3s ease;                    /* анимация по умолчанию */
+    --border:   #E0E0E0;
+    --success:  #2A5C4A;
+    --error:    #C0392B;
+    --shadow:   0 8px 24px rgba(0, 0, 0, 0.08);
+    --tr:       all 0.3s ease;
 }
 
-/* html и body — запрещаем горизонтальный скролл */
 html,
 body {
     overflow-x: hidden;
     width: 100%;
 }
 
-/* базовые стили текста */
 body {
     font-family: 'Inter', sans-serif;
     background: var(--bg);
@@ -35,24 +33,20 @@ body {
     position: relative;
 }
 
-/* все заголовки — шрифт Montserrat */
 h1, h2, h3, h4 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
 }
 
-/* обёртка всей страницы — нужна чтобы не было горизонтального скролла */
 .page-wrapper {
     overflow-x: hidden;
 }
 
-/* main — минимальная высота чтобы футер не болтался посередине на пустых страницах */
 main {
     min-height: calc(100vh - 310px);
 }
 
-/* контейнер — центрирует содержимое, ограничивает ширину до 1200px */
-/* важно: не вешай margin на элемент у которого есть класс .container — сломается центровка */
+/* не вешай margin на элемент с классом .container — сломается центровка */
 .container {
     max-width: 1200px;
     width: 100%;
@@ -67,7 +61,7 @@ main {
 .header {
     background: var(--white);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    position: sticky;  /* липкий — остаётся вверху при скролле */
+    position: sticky;
     top: 0;
     z-index: 100;
 }
@@ -79,7 +73,6 @@ main {
     height: 90px;
 }
 
-/* логотип */
 .logo {
     display: flex;
     align-items: center;
@@ -96,7 +89,6 @@ main {
     width: auto;
 }
 
-/* навигация */
 .nav {
     display: flex;
     gap: 40px;
@@ -115,14 +107,12 @@ main {
     color: var(--accent);
 }
 
-/* правая часть хедера — войти, корзина, бургер */
 .header__actions {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-/* иконка корзины */
 .cart-icon {
     position: relative;
     font-size: 24px;
@@ -130,7 +120,6 @@ main {
     color: var(--primary);
 }
 
-/* бейджик с количеством товаров */
 .cart-count {
     position: absolute;
     top: -8px;
@@ -152,7 +141,7 @@ main {
     margin-right: 8px;
 }
 
-/* бургер — кнопка меню на мобилках, скрыта на десктопе */
+/* скрыт на десктопе, появляется на мобилке */
 .burger {
     display: none;
     flex-direction: column;
@@ -172,7 +161,6 @@ main {
     transition: var(--tr);
 }
 
-/* мобильное меню — выпадает сверху при клике на бургер */
 .mobile-nav {
     display: none;
     position: fixed;
@@ -187,7 +175,6 @@ main {
     z-index: 99;
 }
 
-/* .open добавляется через js когда кликают на бургер */
 .mobile-nav.open {
     display: flex;
 }
@@ -219,13 +206,11 @@ main {
     color: var(--white);
 }
 
-/* золотая кнопка */
 .btn--accent {
     background: var(--accent);
     color: var(--primary);
 }
 
-/* кнопка с рамкой без заливки */
 .btn--outline {
     background: transparent;
     border: 2px solid var(--primary);
@@ -240,8 +225,7 @@ main {
 
 /*слайдер */
 
-/* .hero — обёртка слайдера, она не внутри .container а сама себя центрирует */
-/* поэтому у неё свои max-width и padding, как у .container */
+/* .hero не внутри .container — центрируется сама через margin auto */
 .hero {
     max-width: 1200px;
     width: 100%;
@@ -259,14 +243,13 @@ main {
     width: 100%;
 }
 
-/* обёртка слайдов — занимает весь размер слайдера */
 .slider__slides {
     position: relative;
     width: 100%;
     height: 100%;
 }
 
-/* каждый слайд — абсолютно позиционирован поверх друг друга, скрыт по умолчанию */
+/* слайды лежат стопкой, видно только .active */
 .slider__slide {
     position: absolute;
     inset: 0;
@@ -279,12 +262,10 @@ main {
     justify-content: center;
 }
 
-/* .active добавляется через js — делает слайд видимым */
 .slider__slide.active {
     opacity: 1;
 }
 
-/* текстовый блок поверх фото */
 .slide-content {
     background: rgba(0, 0, 0, 0.45);
     color: white;
@@ -299,7 +280,6 @@ main {
     margin-bottom: 16px;
 }
 
-/* стрелки переключения */
 .slider__arrow {
     position: absolute;
     top: 50%;
@@ -325,7 +305,6 @@ main {
 .slider__arrow--prev { left: 20px; }
 .slider__arrow--next { right: 20px; }
 
-/* точки внизу слайдера */
 .slider__dots {
     position: absolute;
     bottom: 20px;
@@ -345,7 +324,6 @@ main {
     transition: var(--tr);
 }
 
-/* активная точка — вытягивается в таблетку */
 .slider__dot.active {
     background: var(--accent);
     width: 24px;
@@ -353,10 +331,9 @@ main {
 }
 
 
-/*секции главной страницы */
+/*секции */
 
-/* .section — вертикальные отступы между блоками */
-/* важно: не совмещай .section и .container на одном элементе — сломается центровка */
+/* не совмещай .section и .container на одном элементе */
 .section {
     margin: 80px 0;
 }
@@ -367,14 +344,12 @@ main {
     text-align: center;
 }
 
-/* сетка услуг — 4 колонки */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
 
-/* карточка услуги */
 .service-card {
     background: var(--white);
     padding: 32px 24px;
@@ -382,7 +357,7 @@ main {
     text-align: center;
     box-shadow: var(--shadow);
     transition: var(--tr);
-    min-width: 0;  /* фикс для grid — без этого карточки могут растягиваться */
+    min-width: 0;
 }
 
 .service-card:hover {
@@ -400,7 +375,6 @@ main {
     margin-bottom: 12px;
 }
 
-/* калькулятор стоимости */
 .calculator {
     background: var(--white);
     padding: 40px;
@@ -408,7 +382,6 @@ main {
     box-shadow: var(--shadow);
 }
 
-/* строка с полями калькулятора */
 .calc-form {
     display: flex;
     flex-wrap: wrap;
@@ -416,9 +389,8 @@ main {
     align-items: flex-end;
 }
 
-/* одно поле калькулятора */
 .calc-group {
-    flex: 1 1 200px;  /* растягивается, минимум 200px */
+    flex: 1 1 200px;
 }
 
 .calc-group label {
@@ -436,7 +408,6 @@ main {
     font-size: 16px;
 }
 
-/* результат расчёта */
 .calc-result {
     margin-top: 30px;
     font-size: 24px;
@@ -444,7 +415,6 @@ main {
     color: var(--accent);
 }
 
-/* сетка портфолио — 4 квадрата */
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -454,7 +424,7 @@ main {
 .portfolio-item {
     border-radius: 16px;
     overflow: hidden;
-    aspect-ratio: 1 / 1;  /* квадрат */
+    aspect-ratio: 1 / 1;
     box-shadow: var(--shadow);
     position: relative;
 }
@@ -467,12 +437,10 @@ main {
     transition: transform 0.4s ease;
 }
 
-/* увеличение фото при наведении */
 .portfolio-item:hover img {
     transform: scale(1.06);
 }
 
-/* тёмная плашка с названием — появляется при наведении */
 .portfolio-item__overlay {
     position: absolute;
     inset: 0;
@@ -495,7 +463,6 @@ main {
     font-size: 15px;
 }
 
-/* сетка отзывов — 3 колонки */
 .reviews-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -529,7 +496,6 @@ main {
 
 /*галерея */
 
-/* строка кнопок-фильтров */
 .gallery-filter {
     display: flex;
     gap: 12px;
@@ -549,7 +515,6 @@ main {
     font-size: 15px;
 }
 
-/* активный фильтр — тёмный */
 .filter-btn.active {
     background: var(--primary);
     color: white;
@@ -561,7 +526,6 @@ main {
     color: var(--accent);
 }
 
-/* сетка фото — 3 колонки */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -589,7 +553,6 @@ main {
     transform: scale(1.06);
 }
 
-/* подпись категории на фото */
 .gallery-item__cat {
     position: absolute;
     bottom: 10px;
@@ -605,7 +568,6 @@ main {
 
 /*каталог */
 
-/* строка фильтров каталога */
 .filter-bar {
     display: flex;
     gap: 12px;
@@ -613,7 +575,6 @@ main {
     flex-wrap: wrap;
 }
 
-/* сетка услуг — 4 колонки */
 .catalog-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -659,7 +620,6 @@ main {
 
 /*контакты */
 
-/* две колонки: карточки слева, карта справа */
 .contacts-wrap {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -700,7 +660,6 @@ main {
     color: var(--accent);
 }
 
-/* кнопки соцсетей в карточке контактов */
 .contacts-social-links {
     display: flex;
     gap: 12px;
@@ -736,7 +695,6 @@ main {
     background: #fff8ee;
 }
 
-/* карта яндекс */
 .contacts-map {
     border-radius: 20px;
     overflow: hidden;
@@ -751,7 +709,6 @@ main {
     display: block;
 }
 
-/* форма обратной связи */
 .callback-form {
     background: var(--white);
     border-radius: 24px;
@@ -767,7 +724,6 @@ main {
     text-align: center;
 }
 
-/* поля форм — используется на контактах и оформлении */
 .form-group {
     margin-bottom: 20px;
 }
@@ -791,7 +747,6 @@ main {
     background: var(--bg);
 }
 
-/* textarea — чуть другой border-radius, можно растягивать вертикально */
 .form-group textarea {
     border-radius: 16px;
     resize: vertical;
@@ -804,14 +759,12 @@ main {
     border-color: var(--accent);
 }
 
-/* текст ошибки под полем */
 .error-msg {
     color: var(--error);
     font-size: 14px;
     margin-top: 5px;
 }
 
-/* зелёное сообщение об успехе, скрыто по умолчанию */
 .success-msg {
     display: none;
     color: var(--success);
@@ -853,7 +806,6 @@ main {
     border-bottom: none;
 }
 
-/* поле количества в корзине */
 .cart-qty {
     width: 70px;
     padding: 8px 12px;
@@ -863,7 +815,6 @@ main {
     text-align: center;
 }
 
-/* кнопка удалить */
 .cart-remove {
     background: none;
     border: 1px solid var(--border);
@@ -881,7 +832,6 @@ main {
     border-color: var(--error);
 }
 
-/* нижняя строка корзины — итого + кнопка оформить */
 .cart-bottom {
     display: flex;
     justify-content: space-between;
@@ -897,7 +847,6 @@ main {
     font-weight: 700;
 }
 
-/* блок когда корзина пустая */
 .cart-empty {
     text-align: center;
     padding: 60px 0 80px;
@@ -912,7 +861,6 @@ main {
 
 /*оформление заказа */
 
-/* две колонки: форма слева, состав заказа справа */
 .checkout-wrap {
     display: grid;
     grid-template-columns: 1fr 380px;
@@ -928,7 +876,6 @@ main {
     box-shadow: var(--shadow);
 }
 
-/* блок «ваши услуги» справа */
 .order-summary {
     background: var(--white);
     border-radius: 24px;
@@ -965,7 +912,6 @@ main {
     border-top: 2px solid var(--border);
 }
 
-/* зелёное сообщение после оформления */
 .checkout-success {
     display: none;
     background: #e8f5e9;
@@ -988,7 +934,6 @@ main {
     padding: 48px 0 24px;
 }
 
-/* три блока в ряд: контакты, навигация, соцсети */
 .footer__inner {
     display: flex;
     justify-content: space-between;
@@ -1034,7 +979,6 @@ main {
     margin-top: 4px;
 }
 
-/* одна ссылка соцсети в футере */
 .footer__social-link {
     display: inline-flex;
     align-items: center;
@@ -1047,7 +991,7 @@ main {
     transition: var(--tr);
 }
 
-/* иконки соцсетей перекрашиваем в белый через filter */
+/* иконки перекрашиваем в белый через filter */
 .footer__social-link img {
     width: 22px;
     height: 22px;
@@ -1060,16 +1004,14 @@ main {
     color: var(--accent);
 }
 
-/* при наведении иконка перекрашивается в золотой через filter */
 .footer__social-link:hover img {
     opacity: 1;
     filter: brightness(0) saturate(100%) invert(70%) sepia(80%) saturate(400%) hue-rotate(5deg);
 }
 
 
-/*модалка входа/регистрации */
+/*модалка */
 
-/* затемнённый фон */
 .modal {
     display: none;
     position: fixed;
@@ -1083,7 +1025,6 @@ main {
     z-index: 1000;
 }
 
-/* .active добавляется через js когда открывают модалку */
 .modal.active {
     display: flex;
 }
@@ -1097,7 +1038,6 @@ main {
     position: relative;
 }
 
-/* крестик закрытия */
 .modal__close {
     position: absolute;
     top: 16px;
@@ -1111,9 +1051,8 @@ main {
 }
 
 
-/*toast — всплывающее уведомление */
+/*toast */
 
-/* изначально скрыт за нижним краем экрана */
 .toast {
     position: fixed;
     bottom: 30px;
@@ -1134,7 +1073,6 @@ main {
     gap: 10px;
 }
 
-/* .show добавляется через js — выезжает снизу */
 .toast.show {
     transform: translateY(0);
     opacity: 1;
@@ -1147,7 +1085,6 @@ main {
 
 /*адаптив */
 
-/* планшет — меньше 1024px */
 @media (max-width: 1024px) {
     .services-grid  { grid-template-columns: repeat(2, 1fr); }
     .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1157,24 +1094,41 @@ main {
     .checkout-wrap  { grid-template-columns: 1fr; }
 }
 
-/* мобилка — меньше 768px */
 @media (max-width: 768px) {
-    .nav                     { display: none; }        /* прячем обычное меню */
-    .burger                  { display: flex; }        /* показываем бургер */
-    .header__actions .btn    { display: none; }        /* прячем кнопку войти */
-    .services-grid           { grid-template-columns: 1fr; }
-    .portfolio-grid          { grid-template-columns: 1fr; }
+    .nav                     { display: none; }
+    .burger                  { display: flex; }
+    .header__actions .btn    { display: none; }
+
+    .hero                    { margin: 16px auto; padding: 0 12px; }
+    .slider                  { height: 280px; border-radius: 16px; }
+    .slide-content           { padding: 16px 20px; }
+    .slide-content h2        { font-size: 24px; margin-bottom: 8px; }
+    .slide-content p         { font-size: 14px; }
+    .slider__arrow           { width: 36px; height: 36px; font-size: 16px; }
+
+    .logo                    { font-size: 22px; }
+    .logo__img               { height: 34px; }
+
+    .section                 { margin: 48px 0; }
+    .section-title           { font-size: 28px; margin-bottom: 24px; }
+
+    .services-grid           { grid-template-columns: 1fr 1fr; gap: 16px; }
+    .portfolio-grid          { grid-template-columns: 1fr 1fr; }
     .reviews-grid            { grid-template-columns: 1fr; }
     .gallery-grid            { grid-template-columns: repeat(2, 1fr); }
-    .catalog-grid            { grid-template-columns: 1fr; }
-    .slider                  { height: 350px; }
-    .slide-content h2        { font-size: 32px; }
-    .slide-content           { padding: 20px 24px; }
+    .catalog-grid            { grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .checkout-wrap           { grid-template-columns: 1fr; }
+    .contacts-wrap           { grid-template-columns: 1fr; }
+
     .cart-table th:nth-child(3),
-    .cart-table td:nth-child(3) { display: none; }    /* прячем колонку кол-во */
+    .cart-table td:nth-child(3) { display: none; }
 }
 
-/* маленькие телефоны */
 @media (max-width: 480px) {
-    .gallery-grid { grid-template-columns: 1fr; }
+    .services-grid  { grid-template-columns: 1fr; }
+    .catalog-grid   { grid-template-columns: 1fr; }
+    .gallery-grid   { grid-template-columns: 1fr; }
+    .slider         { height: 240px; }
+    .slide-content h2 { font-size: 20px; }
 }
