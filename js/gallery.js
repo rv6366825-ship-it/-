@@ -3,7 +3,7 @@
 var photos = [
     { src: 'https://images.pexels.com/photos/1648377/pexels-photo-1648377.jpeg?auto=compress&cs=tinysrgb&w=600', cat: 'family',   label: 'Семейная'   },
     { src: 'https://images.pexels.com/photos/1586973/pexels-photo-1586973.jpeg?auto=compress&cs=tinysrgb&w=600', cat: 'family',   label: 'Семейная'   },
-    { src: 'https://images.pexels.com/photos/1860353/pexels-photo-1860353.jpeg?auto=compress&cs=tinysrgb&w=600', cat: 'family',   label: 'Семейная'   },
+    { src: 'https://i.pinimg.com/1200x/af/c0/2c/afc02cace1b271f32d854cd7b9d93704.jpg', cat: 'family',   label: 'Семейная'   },
     { src: 'https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&w=600', cat: 'portrait', label: 'Портретная' },
     { src: 'https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=600',   cat: 'portrait', label: 'Портретная' },
     { src: 'https://images.pexels.com/photos/458766/pexels-photo-458766.jpeg?auto=compress&cs=tinysrgb&w=600',   cat: 'portrait', label: 'Портретная' },
