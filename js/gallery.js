@@ -3,12 +3,16 @@
 var photos = [
     { src: 'https://images.pexels.com/photos/1648377/pexels-photo-1648377.jpeg?auto=compress&cs=tinysrgb&w=600', cat: 'family',   label: 'Семейная'   },
     { src: 'https://images.pexels.com/photos/1586973/pexels-photo-1586973.jpeg?auto=compress&cs=tinysrgb&w=600', cat: 'family',   label: 'Семейная'   },
+    { src: 'https://images.pexels.com/photos/1860353/pexels-photo-1860353.jpeg?auto=compress&cs=tinysrgb&w=600', cat: 'family',   label: 'Семейная'   },
     { src: 'https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&w=600', cat: 'portrait', label: 'Портретная' },
     { src: 'https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=600',   cat: 'portrait', label: 'Портретная' },
+    { src: 'https://images.pexels.com/photos/458766/pexels-photo-458766.jpeg?auto=compress&cs=tinysrgb&w=600',   cat: 'portrait', label: 'Портретная' },
     { src: 'https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=600', cat: 'wedding',  label: 'Свадебная'  },
     { src: 'https://images.pexels.com/photos/3755755/pexels-photo-3755755.jpeg?auto=compress&cs=tinysrgb&w=600', cat: 'wedding',  label: 'Свадебная'  },
+    { src: 'https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=600', cat: 'wedding',  label: 'Свадебная'  },
     { src: 'https://images.pexels.com/photos/842876/pexels-photo-842876.jpeg?auto=compress&cs=tinysrgb&w=600',   cat: 'object',   label: 'Предметная' },
     { src: 'https://images.pexels.com/photos/265722/pexels-photo-265722.jpeg?auto=compress&cs=tinysrgb&w=600',   cat: 'object',   label: 'Предметная' },
+    { src: 'https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=600',   cat: 'object',   label: 'Предметная' }
 ];
 
 var grid      = document.getElementById('galleryGrid');
